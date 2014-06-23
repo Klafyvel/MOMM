@@ -7,22 +7,27 @@
 #define PAS_4 5
 #define PAS_5 6
 
-//Stepper moteur(200, PAS_1, PAS_2, PAS_3, PAS_4);
+Stepper moteur(200, 8, 9, 10, 11);
 
 void setup()
 {
-	DDRB = B00001111; // 8 (poids faible) vers 13 (poids fort)
-	PORTB = B00000000;
+	moteur.setSpeed(30);
+	/*DDRB = B00001111; // 8 (poids faible) vers 13 (poids fort)
+	PORTB = B00000000;*/
 }
 void loop()
 {
-	// En mode 1/2 pas
+	moteur.step(6000);
+	delay(200);
+	moteur.step(-6000);
+	delay(200);
+	/*// En mode 1/2 pas
 	for(int i=0; i<8; i++)
 	{
 		switch(i)
 		{
 			case 0:
-				PORTB = B00001000;
+				PORTB = B00001001;
 				break;
 			case 1:
 				PORTB = B00001010;
@@ -48,5 +53,5 @@ void loop()
 				break;
 		}
 		delay(5);
-	}
+	}*/
 }
