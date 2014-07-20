@@ -5,4 +5,6 @@
 #define NB_STEP_MOTOR_AXIS_Y
 #define NB_STEP_MOTOR_AXIS_Z
 
+#define PORT_MOTOR_CONTROL
+
 #endif
