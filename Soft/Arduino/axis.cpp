@@ -1,18 +1,17 @@
 Axis::Axis(char nb_step_motor, char screw_thread)
 {
-	this->step = Stepper(nb_step_motor);
-	this->step.set_moving_mode(HALF_STEP);
-	this->speed = 0;
-	this->screw_thread = screw_thread;
-	this->minimum_displacement = screw_thread / nb_step_motor / 2;
+    this->step = Stepper(nb_step_motor);
+    this->step.set_moving_mode(HALF_STEP);
+    this->screw_thread = screw_thread;
+    this->minimum_displacement = screw_thread / nb_step_motor / 2;
 }
 
-void Axis::set_speed(char speed)
+void Axis::forward()
 {
-	this->speed = speed
+    this->motor.move(RIGHT);
 }
 
-void Axis::forward(char mm)
+void Axis::backward()
 {
-	float done = 0;
+    this->motor.move(LEFT);
 }

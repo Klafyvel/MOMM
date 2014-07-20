@@ -8,14 +8,11 @@ class Axis
 {
 public:
 	Axis();
-	void set_speed(char speed);
-	void forward(char mm);
-	void backward(char mm);
+	void forward();
+	void backward();
 private:
-	Stepper step;
-	char speed; // mm/s
+	Stepper motor;
 	char screw_thread;
-	long timer;
 	float minimum_displacement;
 };
 
