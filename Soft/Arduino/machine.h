@@ -2,6 +2,7 @@
 #define H_MACHINE
 
 #include "axis.h"
+#include <Arduino.h>
 #include <cmath.h>
 
 typedef struct {
@@ -17,10 +18,10 @@ class Machine
 public:
 	Machine();
     void move(mvment mv);
-    void set_speed(int speed);
+    void set_speed_mm_per_s(int speed);
 	
 private:
-    int speed;
+    int delay;
 	Axis axis[3];
 };
 

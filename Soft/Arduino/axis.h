@@ -7,13 +7,13 @@
 class Axis
 {
 public:
-	Axis();
-	void forward();
-	void backward();
+    Axis();
+    void forward();
+    void backward();
 private:
-	Stepper motor;
-	char screw_thread;
-	float minimum_displacement;
+    Stepper motor;
+    char screw_thread;
+    float minimum_displacement;
 };
 
 #endif

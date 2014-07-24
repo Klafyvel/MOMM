@@ -47,8 +47,10 @@ void Machine::move(mvment mv)
                 axis[2].forward();
             done.z += increment_z;
         }
-        
-        
+        delay(this->delay);
     }
 }
-
+void Machine::set_speed_mm_per_s(int speed);
+{
+    
+}
