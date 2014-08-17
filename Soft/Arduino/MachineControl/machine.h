@@ -1,9 +1,11 @@
 #ifndef H_MACHINE
 #define H_MACHINE
 
-#include "axis.h"
 #include <Arduino.h>
 #include <cmath.h>
+
+#include "axis.h"
+#include "gcode.h"
 
 typedef struct {
     float x;
@@ -16,13 +18,15 @@ bool mvment_is_eq(mvment *a, mvment *b);
 class Machine
 {
 public:
-	Machine();
+    Machine();
     void move(mvment mv);
     void set_speed_mm_per_s(int speed);
-	
+    
 private:
     int delay;
-	Axis axis[3];
+    Axis axis[3];
+    
+    
 };
 
 #endif
